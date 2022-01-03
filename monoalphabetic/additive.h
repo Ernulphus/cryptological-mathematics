@@ -12,7 +12,26 @@ using std::string;
 string additiveEncipher(string message, int key);
 string additiveDecipher(string ciphertext, int key);
 void cleanMessage(string &message);
-char shift(char c);
+char shift(char c, int offset);
+
+string additiveEncipher(string message, int key)
+{
+  cleanMessage(message);
+  string ciphertext = "";
+  for (int i = 0; i < message.length(); i++)
+  {
+    ciphertext += shift(message[i], key);
+    if ((i+1) % 3 == 0)
+    ciphertext += " ";
+  }
+  return ciphertext;
+}
+
+string additiveDecipher(string ciphertext, int key)
+{
+  string plaintext = "";
+  return plaintext;
+}
 
 void cleanMessage(string &message)
 {
