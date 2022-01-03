@@ -3,6 +3,7 @@
 
 using std::cout;
 using std::endl;
+using std::string;
 
 int main()
 {
@@ -10,7 +11,10 @@ int main()
   // std::string m = "This is a message!";
   // cleanMessage(m);
   // std::cout << m << std::endl;
-  cout << additiveEncipher("You look lovely today", 3) << endl;
+  int key = 13;
+  string c = additiveEncipher("I am reading an enthralling book", key);
+  cout << c << endl;
+  cout << additiveDecipher(c, key) << endl;
 
 
 

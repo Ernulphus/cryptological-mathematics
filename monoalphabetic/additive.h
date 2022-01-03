@@ -29,7 +29,12 @@ string additiveEncipher(string message, int key)
 
 string additiveDecipher(string ciphertext, int key)
 {
+  cleanMessage(ciphertext);
+  std::cout << ciphertext << "\n";
   string plaintext = "";
+  for (int i = 0; i < ciphertext.length(); i++)
+    plaintext += shift(ciphertext[i], -key);
+
   return plaintext;
 }
 
@@ -51,5 +56,8 @@ void cleanMessage(string &message)
 
 char shift(char c, int offset)
 {
-  return (((c - 97) + offset) % 26) + 97;
+  char s = ((c - 97) + offset) % 26;
+  if (s < 0)
+    s = 26 + s;
+  return s + 97;
 }
