@@ -1,9 +1,13 @@
 #include <iostream>
+#include "helpers.h"
 #include "additive.h"
+#include "multiplicative.h"
 
 using std::cout;
 using std::endl;
 using std::string;
+
+// Assuming an alphabet of 26 letters (a-z)
 
 int main()
 {
@@ -14,6 +18,10 @@ int main()
   // std::cout << m << std::endl;
 
   // Test multiplicative
+  int key = 3;
+  string ci = multiplicativeEncipher("I love your sense of humor", key);
+  cout << ci << endl;
+  cout << multiplicativeDecipher(ci, key) << endl;
 
   // Test additive
   // int key = 13;

@@ -1,7 +1,35 @@
 #include <string>
 
+using std::string;
+
 void cleanMessage(string &message);
 char shift(char c, int offset);
+
+int inverse(int n, int modulus)
+{
+  for (int i = modulus; i > 0; i--)
+  {
+    if ((n*i) % modulus == 1)
+      return i;
+  }
+  return -1;
+}
+
+int gcd(int n, int m)
+{
+  for (int i = (n < m ? n : m); i > 0; i--)
+  {
+    if ((n % i == 0) && (m % i == 0))
+      return i;
+  }
+  return 0;
+}
+
+char multiply(char c, int offset)
+{
+  char s = ((c - 96) * offset) % 26;
+  return s + 96;
+}
 
 void cleanMessage(string &message)
 {
