@@ -26,7 +26,9 @@ int main()
   string keyword = "mathematics";
   char keyletter = 'f';
   string message = "abcdefghijklmnopqrstuvwxyz";
-  cout << keywordEncipher(message, keyword, keyletter) << endl;
+  string c = keywordEncipher(message, keyword, keyletter);
+  cout << c << endl;
+  cout << keywordDecipher(c, keyword, keyletter) << endl;
 /*
   // Test additive
   int key = 13;
