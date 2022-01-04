@@ -3,6 +3,7 @@
 #include "additive.h"
 #include "multiplicative.h"
 #include "affine.h"
+#include "keyword.h"
 
 using std::cout;
 using std::endl;
@@ -17,7 +18,16 @@ int main()
   // std::string m = "This is a message!";
   // cleanMessage(m);
   // std::cout << m << std::endl;
+  // string k = "mathematics";
+  // cleanKeyword(k);
+  // cout << k << endl;
 
+  // Test keyword
+  string keyword = "mathematics";
+  char keyletter = 'f';
+  string message = "abcdefghijklmnopqrstuvwxyz";
+  cout << keywordEncipher(message, keyword, keyletter) << endl;
+/*
   // Test additive
   int key = 13;
   string message = "I am reading an enthralling book";
@@ -42,6 +52,8 @@ int main()
   c = affineEncipher(message, keyA, keyM);
   cout << c << endl;
   cout << affineDecipher(c, keyA, keyM) << endl << endl;
+*/
+
   return 0;
 }
 /*
