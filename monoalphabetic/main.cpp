@@ -26,13 +26,14 @@ int main()
   string keyword = "mathematics";
   char keyletter = 'f';
   string message = "abcdefghijklmnopqrstuvwxyz";
-  string c = keywordEncipher(message, keyword, keyletter);
-  cout << c << endl;
-  cout << keywordDecipher(c, keyword, keyletter) << endl;
-/*
+  cout << "Keyword cipher of message \"" << message << "\" with keyword " << keyword << " and keyletter " << keyletter << endl;
+  string ci = keywordEncipher(message, keyword, keyletter);
+  cout << ci << endl;
+  cout << keywordDecipher(ci, keyword, keyletter) << endl << endl;
+
   // Test additive
   int key = 13;
-  string message = "I am reading an enthralling book";
+  message = "I am reading an enthralling book";
   cout << "Additive cipher of message \"" << message << "\" with key " << key << endl;
   string c = additiveEncipher(message, key);
   cout << c << endl;
@@ -54,7 +55,6 @@ int main()
   c = affineEncipher(message, keyA, keyM);
   cout << c << endl;
   cout << affineDecipher(c, keyA, keyM) << endl << endl;
-*/
 
   return 0;
 }

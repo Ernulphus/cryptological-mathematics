@@ -12,7 +12,7 @@ string additiveEncipher(string message, int key)
   {
     ciphertext += shift(message[i], key);
     if ((i+1) % 3 == 0)
-    ciphertext += " ";
+      ciphertext += " ";
   }
   return ciphertext;
 }
