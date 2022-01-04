@@ -2,6 +2,7 @@
 #include "helpers.h"
 #include "additive.h"
 #include "multiplicative.h"
+#include "affine.h"
 
 using std::cout;
 using std::endl;
@@ -17,19 +18,30 @@ int main()
   // cleanMessage(m);
   // std::cout << m << std::endl;
 
-  // Test multiplicative
-  int key = 3;
-  string ci = multiplicativeEncipher("I love your sense of humor", key);
-  cout << ci << endl;
-  cout << multiplicativeDecipher(ci, key) << endl;
-
   // Test additive
-  // int key = 13;
-  // string c = additiveEncipher("I am reading an enthralling book", key);
-  // cout << c << endl;
-  // cout << additiveDecipher(c, key) << endl;
+  int key = 13;
+  string message = "I am reading an enthralling book";
+  cout << "Additive cipher of message \"" << message << "\" with key " << key << endl;
+  string c = additiveEncipher(message, key);
+  cout << c << endl;
+  cout << additiveDecipher(c, key) << endl << endl;
 
+  // Test multiplicative
+  key = 11;
+  message = "Let's talk about it together!";
+  cout << "Multiplicative cipher of message \"" << message << "\" with key " << key << endl;
+  c = multiplicativeEncipher(message, key);
+  cout << c << endl;
+  cout << multiplicativeDecipher(c, key) << endl << endl;
 
+  // Test affine
+  int keyM = 7;       // Multiplicative key
+  int keyA = 11; // Additive key
+  message = "Meet me at the usual place at eight o'clock";
+  cout << "Affine cipher of message \"" << message << "\" with mult. key " << keyM << " and add. key " << keyA << endl;
+  c = affineEncipher(message, keyA, keyM);
+  cout << c << endl;
+  cout << affineDecipher(c, keyA, keyM) << endl << endl;
   return 0;
 }
 /*

@@ -1,7 +1,7 @@
 using std::string;
 
 string multiplicativeEncipher(string message, int key);
-string multiplicativeEncipher(string ciphertext, int key);
+string multiplicativeDecipher(string ciphertext, int key);
 
 string multiplicativeEncipher(string message, int key)
 {
@@ -22,7 +22,6 @@ string multiplicativeEncipher(string message, int key)
 string multiplicativeDecipher(string ciphertext, int key)
 {
   int invkey = inverse(key, 26);
-  std::cout << "inverse of " << key << " is " << invkey << std::endl;
   cleanMessage(ciphertext);
   string plaintext = "";
   for (int i = 0; i < ciphertext.length(); i++)

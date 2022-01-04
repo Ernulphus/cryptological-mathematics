@@ -2,6 +2,9 @@
 
 using std::string;
 
+int inverse(int n, int modulus);
+int gcd(int n, int m);
+char multiply(char c, int offset);
 void cleanMessage(string &message);
 char shift(char c, int offset);
 
@@ -28,6 +31,7 @@ int gcd(int n, int m)
 char multiply(char c, int offset)
 {
   char s = ((c - 96) * offset) % 26;
+  if (s == 0) s += 26;
   return s + 96;
 }
 
