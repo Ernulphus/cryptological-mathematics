@@ -117,10 +117,12 @@ void cleanMessage(string &message)
   auto x = message.begin();
   while (x !=  message.end())
   {
+    // std::cout << *x << " " << int(*x) <<  std::endl;
     if (*x >= 65 && *x <= 90)
       *x += 32;
     if (*x < 97 || *x > 122)
-      message.erase(x);
+      {x = message.erase(x);
+        x--;}
     if (x == message.end())
       break;
     x++;
